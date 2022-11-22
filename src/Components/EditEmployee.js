@@ -2,7 +2,7 @@ import axios from "axios";
 import React, {useState, useEffect} from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
-const endpoint = 'http://localhost:8000/api/adopter/'
+const endpoint = 'http://localhost:8000/api/employee/'
 
 const EditEmployee = () =>{
     const [employee, setEmployee] = useState('')
