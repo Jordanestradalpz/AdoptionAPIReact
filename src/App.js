@@ -6,6 +6,9 @@ import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import ShowAdopter from './Components/ShowAdopter';
 import CreateAdopter from './Components/CreateAdopter';
 import EditAdopter from './Components/EditAdopter';
+import ShowEmployee from './Components/ShowEmployee';
+import CreateEmployee from './Components/CreateEmployee';
+import EditEmployee from './Components/EditEmployee';
 
 
 function App() {
@@ -13,9 +16,12 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Routes>
-          <Route path='/' element={ <ShowAdopter/> } />
-          <Route path='/create' element={ <CreateAdopter/> } />
-          <Route path='/edit/:idAdopter' element={ <EditAdopter/> } />
+          <Route path='/adopter' element={ <ShowAdopter/> } />
+          <Route path='/adopter/create' element={ <CreateAdopter/> } />
+          <Route path='/adopter/edit/:idAdopter' element={ <EditAdopter/> } />
+          <Route path='/employee' element={ <ShowEmployee/> } />
+          <Route path='/employee/create' element={ <CreateEmployee/> } />
+          <Route path='/employee/edit/:idEmpleado' element={ <EditEmployee/> } />
         </Routes>
       </BrowserRouter>
     </div>

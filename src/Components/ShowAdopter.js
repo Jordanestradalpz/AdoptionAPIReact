@@ -24,7 +24,7 @@ const ShowAdopter = () => {
   return (
     <div>
         <div className='d-grid gap-2'>
-            <Link to="/create" className='btn btn-success btn-lg mt-2 mb-2 text-white'>Create</Link>
+            <Link to="/adopter/create" className='btn btn-success btn-lg mt-2 mb-2 text-white'>Create</Link>
         </div>
 
         <table className='table table-striped'>
@@ -38,13 +38,13 @@ const ShowAdopter = () => {
             </thead>
             <tbody>
                 { adopter.map( (adopter) => (
-                    <tr key={adopter.id}>
+                    <tr key={adopter.idAdopter}>
                         <td> {adopter.idAdopter} </td>    
                         <td> {adopter.idUsuario} </td>    
                         <td> {adopter.activo} </td>    
                         <td>
-                            <Link to={`/edit/${adopter.id}`} className='btn btn-warning'>Edit</Link>
-                            <button onClick={ ()=>deleteAdopter(adopter.id) } className='btn btn-danger'>Delete</button>
+                            <Link to={`/edit/${adopter.idAdopter}`} className='btn btn-warning'>Edit</Link>
+                            <button onClick={ ()=>deleteAdopter(adopter.idAdopter) } className='btn btn-danger'>Delete</button>
                         </td>
 
                     </tr>
