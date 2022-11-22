@@ -21,15 +21,6 @@ const CreateSpecie = () => {
         <h3>Create Specie</h3>
         <form onSubmit={store}>
             <div className='mb-3'>
-                <label className='form-label'>Id Specie</label>
-                <input 
-                    value={idEspecie}
-                    onChange={ (e)=> setID(e.target.value)}
-                    type='text'
-                    className='form-control'
-                />
-            </div>
-            <div className='mb-3'>
                 <label className='form-label'>Name</label>
                 <input 
                     value={nombre}
