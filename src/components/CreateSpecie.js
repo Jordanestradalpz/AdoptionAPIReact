@@ -2,17 +2,17 @@ import axios from 'axios'
 import React, {useState} from 'react'
 import { useNavigate } from 'react-router-dom'
 
-const endpoint = 'http://localhost:8000/api'
+const endpoint = 'http://localhost:8000/api/species'
 
 const CreateSpecie = () => {
-    const [idEspecie, setID] = useState('')
     const [nombre, setName] = useState('')
     const [raza, setRace] = useState('')
+    
     const navigate = useNavigate()
 
     const store = async (e) => {
         e.preventDefault()
-        await axios.post(endpoint, {idEspecie: idEspecie, nombre: nombre, raza: raza})
+        await axios.post(endpoint, {nombre: nombre, raza: raza})
         navigate('/')
     }
     

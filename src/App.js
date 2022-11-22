@@ -1,6 +1,9 @@
-import logo from './logo.svg';
 import './App.css';
-import {BrowserRouter, Routes, Route} from 'react-router-dom';
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+} from "react-router-dom";
 import ShowSpecies from './components/ShowSpecies';
 import CreateSpecie from './components/CreateSpecie';
 import EditSpecie from './components/EditSpecie';
@@ -9,16 +12,16 @@ function App() {
   return (
     <div className="App">
       
-      <BrowserRouter>
+    <Router>
         <Routes>
           <Route path='/' element={ <ShowSpecies /> }/>
-            {/* <Route path='/create' element={ <CreateSpecie /> }/> */}
-            {/* <Route path='/edit/:id' element={ <EditSpecie /> }/> */}
+          <Route path='/createSpecie' element={ <CreateSpecie /> }/>
+          <Route path='/edit/:id' element={ <EditSpecie /> }/>
         </Routes>
-      </BrowserRouter>
+    </Router>
 
     </div>
-  );
+);
 }
 
 export default App;
