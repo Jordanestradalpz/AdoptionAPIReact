@@ -1,10 +1,16 @@
 import React, {useEffect, useState} from 'react'
 import axios from 'axios'
 import {Link} from 'react-router-dom'
+import DialogScreen from './DialogScreen'
 
-const endpoint = 'http://localhost:8000/employee'
+
+const endpoint = 'http://localhost:8000/api'
 
 const ShowEmployee = () => {
+    const [id, setId] = useState(null);
+    const [displayConfirmationModal, setDisplayConfirmationModal] = useState(false);
+    const [deleteMessage, setDeleteMessage] = useState(null)
+
   const [ employee, setEmployee ] = useState( [] )
 
   useEffect ( ()=> {
@@ -20,15 +26,28 @@ const ShowEmployee = () => {
   const deleteEmployee = async (id) => {
     await axios.delete(`${endpoint}/employee/${id}`)
     getAllEmployee()
+    setDisplayConfirmationModal(false)
   }
+
+  const showDeleteModal = (idEmpleado) => {
+    setId(idEmpleado);
+    setDeleteMessage(`Are you sure you want to delete the registry?`);
+    setDisplayConfirmationModal(true);
+  };
+ 
+  // Hide the modal
+  const hideConfirmationModal = () => {
+    setDisplayConfirmationModal(false);
+  };
+
   return (
     <div>
         <div className='d-grid gap-2'>
             <Link to="/employee/create" className='btn btn-success btn-lg mt-2 mb-2 text-white'>Create</Link>
         </div>
 
-        <table className='table table-striped'>
-            <thead className='bg-primary text-white'>
+        <table className='table table-hover'>
+            <thead className='bg-secondary text-white'>
                 <tr>
                     <th>idEmpleado</th>
                     <th>idUsuario</th>
@@ -38,19 +57,20 @@ const ShowEmployee = () => {
             </thead>
             <tbody>
                 { employee.map( (employee) => (
-                    <tr key={employee.id}>
+                    <tr>
                         <td> {employee.idEmpleado} </td>    
                         <td> {employee.idUsuario} </td>    
                         <td> {employee.activo} </td>    
                         <td>
-                            <Link to={`/edit/${employee.idEmpleado}`} className='btn btn-warning'>Edit</Link>
-                            <button onClick={ ()=>deleteEmployee(employee.idEmpleado) } className='btn btn-danger'>Delete</button>
+                            <Link to={`/employee/edit/${employee.idEmpleado}`} className='btn btn-outline-warning'>Edit</Link>
+                            <button onClick={ ()=>showDeleteModal(employee.idEmpleado) } className='btn btn-outline-danger'>Delete</button>
                         </td>
 
                     </tr>
                 )) }
             </tbody>
         </table>
+        <div><DialogScreen showModal={displayConfirmationModal} confirmModal={deleteEmployee} hideModal={hideConfirmationModal} id={id} message={deleteMessage}  /></div>
     </div>
   )
 }

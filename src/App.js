@@ -18,10 +18,10 @@ function App() {
         <Routes>
           <Route path='/adopter' element={ <ShowAdopter/> } />
           <Route path='/adopter/create' element={ <CreateAdopter/> } />
-          <Route path='/adopter/edit/:idAdopter' element={ <EditAdopter/> } />
+          <Route path='/adopter/edit/:id' element={ <EditAdopter/> } />
           <Route path='/employee' element={ <ShowEmployee/> } />
           <Route path='/employee/create' element={ <CreateEmployee/> } />
-          <Route path='/employee/edit/:idEmpleado' element={ <EditEmployee/> } />
+          <Route path='/employee/edit/:id' element={ <EditEmployee/> } />
         </Routes>
       </BrowserRouter>
     </div>

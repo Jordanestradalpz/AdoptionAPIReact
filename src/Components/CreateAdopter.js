@@ -1,34 +1,24 @@
 import React, {useState} from 'react'
 import axios from 'axios'
-import { useNavigate} from 'react-router-dom'
+
 
 const endpoint = 'http://localhost:8000/api/adopter'
 
 const CreateAdopter = () => {
-    const [idAdopter, setIdAdopter] = useState('')
+
     const [idUsuario, setIdUsuario] = useState('')
     const [activo, setActivo] = useState('')
 
-    const navigate=  useNavigate()
 
     const store = async (e) => {
         e.preventDefault()
-        await axios.post(endpoint, {idAdopter: idAdopter, idUsuario: idUsuario, activo: activo})
-        navigate('/')
+        await axios.post(endpoint, {idUsuario: idUsuario, activo: activo})
+        window.location.href="http://localhost:3000/adopter"
     }
   return (
     <div>
-      <h3>Identify Adopter and User</h3>
-      <form onSubmit={{store}}>
-        <div className='mb-3'>
-            <label className='form-label'>idAdopter</label>
-            <input
-                value={idAdopter}
-                onChange={(e)=> setIdAdopter(e.target.value)}
-                type='text'
-                className='form-control'
-            />
-        </div>
+      <h3>Create new adopter</h3>
+      <form onSubmit={store}>
         <div className='mb-3'>
             <label className='form-label'>idUsuario</label>
             <input
