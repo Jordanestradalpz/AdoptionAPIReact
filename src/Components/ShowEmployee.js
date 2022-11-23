@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom'
 import DialogScreen from './DialogScreen'
 
 
-const endpoint = 'http://localhost:8000/api'
+const endpoint = 'http://localhost:8000/api';
 
 const ShowEmployee = () => {
     const [id, setId] = useState(null);
