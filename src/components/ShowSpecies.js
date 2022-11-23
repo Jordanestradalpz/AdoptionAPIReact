@@ -62,7 +62,7 @@ const ShowSpecies = () => {
                             <td> {species.nombre} </td>
                             <td> {species.raza} </td>
                             <td>
-                                <Link to={`/edit/${species.idEspecie}`} className='btn btn-warning'>Edit</Link>
+                                <Link to={`/specie/edit/${species.idEspecie}`} className='btn btn-warning'>Edit</Link>
                                 <button onClick={ ()=> showDeleteModal(species.idEspecie) } className='btn btn-danger'>Delete</button>
                             </td>
                         </tr>

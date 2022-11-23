@@ -13,7 +13,7 @@ const CreateSpecie = () => {
     const store = async (e) => {
         e.preventDefault()
         await axios.post(endpoint, {nombre: nombre, raza: raza})
-        navigate('/')
+        navigate('/showSpecies')
     }
     
   return (

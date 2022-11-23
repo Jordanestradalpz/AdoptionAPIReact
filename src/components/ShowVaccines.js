@@ -1,10 +1,15 @@
 import React, {useEffect, useState} from 'react'
 import axios from 'axios'
 import {Link} from 'react-router-dom'
+import DialogScreen from './DialogScreen'
 
 const endpoint = 'http://localhost:8000/api'
 
 const ShowVaccines = () => {
+
+    const [id, setId] = useState(null);
+    const [displayConfirmationModal, setDisplayConfirmationModal] = useState(false);
+    const [deleteMessage, setDeleteMessage] = useState(null);
 
     const [ vaccine, setVaccine] = useState( [] )
     useEffect( () => {
@@ -14,14 +19,26 @@ const ShowVaccines = () => {
     const getAllVaccines = async () => {
         const response = await axios.get(`${endpoint}/vaccine`)
         setVaccine(response.data)
+        console.log(response.data);
     }
 
-    const deleteVaccine = async () => {
-        await axios.delete(`${endpoint}/vaccine`)
+    const deleteVaccine = async (id) => {
+        console.log(id);
+        await axios.delete(`${endpoint}/vaccine/${id}`)
         getAllVaccines()
+        setDisplayConfirmationModal(false)
     }
 
+    const showDeleteModal = (id) => {
+        setId(id);
+        setDeleteMessage(`Are you sure you want to delete the registry?`);
+        setDisplayConfirmationModal(true);
+      };
 
+      // Hide the modal
+      const hideConfirmationModal = () => {
+        setDisplayConfirmationModal(false);
+      };
 
   return (
     <div>
@@ -34,7 +51,7 @@ const ShowVaccines = () => {
                     <tr>
                         <th>ID vaccine</th>
                         <th>Name</th>
-                        <th>Ilness</th>
+                        <th>Illness</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
@@ -45,14 +62,14 @@ const ShowVaccines = () => {
                             <td> {vaccine.nombre} </td>
                             <td> {vaccine.enfermedad} </td>
                             <td>
-                                <Link to={`/edit/${vaccine.id}`} className='btn btn-warning'>Edit</Link>
-                                <button onClick={ ()=> deleteVaccine(vaccine.id) } className='btn btn-danger'>Delete</button>
+                                <Link to={`/vaccine/edit/${vaccine.idVacuna}`} className='btn btn-warning'>Edit</Link>
+                                <button onClick={ ()=> showDeleteModal(vaccine.idVacuna) } className='btn btn-danger'>Delete</button>
                             </td>
                         </tr>
                     )) }
                 </tbody>
             </table>
-
+            <div><DialogScreen showModal={displayConfirmationModal} confirmModal={deleteVaccine} hideModal={hideConfirmationModal} id={id} message={deleteMessage}  /></div>
     </div>
   )
 }

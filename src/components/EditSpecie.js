@@ -16,7 +16,7 @@ const EditSpecies = () => {
             nombre: nombre,
             raza: raza
         })
-        navigate('/')
+        navigate('/showSpecies')
     }
     
 /*    useEffect( () =>{
