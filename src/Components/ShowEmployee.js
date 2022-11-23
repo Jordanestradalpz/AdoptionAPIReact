@@ -42,8 +42,9 @@ const ShowEmployee = () => {
 
   return (
     <div>
+              <h2>Employee</h2>
         <div className='d-grid gap-2'>
-            <Link to="/employee/create" className='btn btn-success btn-lg mt-2 mb-2 text-white'>Create</Link>
+            <Link to="/employee/create" className='btn btn-success btn-lg mt-2 mb-2 text-white'>Create Employee</Link>
         </div>
 
         <table className='table table-hover'>

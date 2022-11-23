@@ -20,7 +20,10 @@ export default class Menu extends Component{
                 </li>
                 
                 <li class="nav-item">
-                    <a class="nav-link active" href="." tabindex="-1">Adopter</a>
+                    <a class="nav-link active" href="/adopter" tabindex="-1">Adopter</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="/employee" tabindex="-1">Employee</a>
                 </li>
             </ul>
             </div>

@@ -43,8 +43,9 @@ const ShowAdopter = () => {
 
   return (
     <div>
+              <h2>Adopter</h2>
         <div className='d-grid gap-2'>
-            <Link to="/adopter/create" className='btn btn-success btn-lg mt-2 mb-2 text-white'>Create</Link>
+            <Link to="/adopter/create" className='btn btn-success btn-lg mt-2 mb-2 text-white'>Create Adopter</Link>
         </div>
 
         <table className='table table-hover'>

@@ -1,15 +1,16 @@
+// eslint-disable-next-line
 import logo from './logo.svg';
 import './App.css';
-import {BrowserRouter , Routes, Route} from 'react-router-dom';
-import Menu from './components/Menu';
-import Mascota from './components/Mascota';
-import CreateMascota from './components/CreateMascota';
-import EdithMascota from './components/EdithMascota';
-import DeleteMascota from './components/DeleteMascota';
-import Solicitud from './components/Solicitud';
-import EdithSolicitud from './components/EdithSolicitud';
-import DeleteSolicitud from './components/DeleteSolicitud';
-import CreateSolicitud from './components/CreateSolicitud';
+
+import Menu from './Components/Menu';
+import Mascota from './Components/Mascota';
+import CreateMascota from './Components/CreateMascota';
+import EdithMascota from './Components/EdithMascota';
+import DeleteMascota from './Components/DeleteMascota';
+import Solicitud from './Components/Solicitud';
+import EdithSolicitud from './Components/EdithSolicitud';
+import DeleteSolicitud from './Components/DeleteSolicitud';
+import CreateSolicitud from './Components/CreateSolicitud';
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
 
 //importar nuestros componentes
@@ -39,10 +40,6 @@ function App() {
         <Route path='/createsolicitud' element={<CreateSolicitud/>}/>
         <Route path='/edithsolicitud/:idAdoption' element={<EdithSolicitud/>}/>
         <Route path='/deletesolicitud/:idAdoption' element={<DeleteSolicitud/>}/>
-      </Routes>
-    <div className="App">
-      <BrowserRouter>
-        <Routes>
           <Route path='/adopter' element={ <ShowAdopter/> } />
           <Route path='/adopter/create' element={ <CreateAdopter/> } />
           <Route path='/adopter/edit/:id' element={ <EditAdopter/> } />
@@ -50,7 +47,6 @@ function App() {
           <Route path='/employee/create' element={ <CreateEmployee/> } />
           <Route path='/employee/edit/:id' element={ <EditEmployee/> } />
         </Routes>
-      </BrowserRouter>
     </div>
     </BrowserRouter>
   );
