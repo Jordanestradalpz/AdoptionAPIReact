@@ -4,9 +4,12 @@ import {
   Route,
   Routes,
 } from "react-router-dom";
-import ShowSpecies from './components/ShowSpecies';
-import CreateSpecie from './components/CreateSpecie';
-import EditSpecie from './components/EditSpecie';
+import ShowCard from './components/ShowCard';
+import CreateCard from './components/CreateCard';
+import EditCard from './components/EditCard';
+import Showusers from './components/Showusers';
+import EditUser from './components/EditUser';
+import CreateUser from './components/CreateUser';
 
 function App() {
   return (
@@ -14,9 +17,12 @@ function App() {
       
     <Router>
         <Routes>
-          <Route path='/' element={ <ShowSpecies /> }/>
-          <Route path='/createSpecie' element={ <CreateSpecie /> }/>
-          <Route path='/edit/:id' element={ <EditSpecie /> }/>
+          <Route path='/showCard' element={ <ShowCard /> }/>
+          <Route path='/showusers' element={ <Showusers /> }/>
+          <Route path='/createCard' element={ <CreateCard /> }/>
+          <Route path='/createUser' element={ <CreateUser /> }/>
+          <Route path='/card/edit/:id' element={ <EditCard /> }/>
+          <Route path='/user/edit/:user' element={ <EditUser /> }/>
         </Routes>
     </Router>
 
@@ -25,5 +31,4 @@ function App() {
 }
 
 export default App;
-
 
