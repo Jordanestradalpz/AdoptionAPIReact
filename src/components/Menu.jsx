@@ -16,7 +16,7 @@ export default class Menu extends Component{
                 <Link className="nav-link active" to="/mascotas">Mascotas</Link>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link active"  href=".">Employee</a>
+                <Link className="nav-link active" to="/solicitudes">Solicitudes</Link>
                 </li>
                 
                 <li class="nav-item">

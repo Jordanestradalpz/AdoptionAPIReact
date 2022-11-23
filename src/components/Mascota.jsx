@@ -17,7 +17,6 @@ export default class Mascota extends Component{
 
     fetchMascota = async () => {
         let respuesta = await axios.get('http://127.0.0.1:8000/api/pet');
-        // eslint-disable-next-line react/no-direct-mutation-state
         this.setState({mascotas: respuesta.data})
     }
 
@@ -52,8 +51,8 @@ export default class Mascota extends Component{
                         <td>{mascota.sexo}</td>
                         <td>{mascota.activo}</td>
                         <td>{mascota.idEspecie}</td>
-                        <td><button className="btn btn-default">Editar</button>
-                        <button className="btn btn-danger">Eliminar</button></td>
+                        <td><Link className="btn btn-primary" to={`/edithmascota/${mascota.idMascota}`}>Editar</Link>
+                        <Link className="btn btn-danger" to={`/deletemascota/${mascota.idMascota}`}>Eliminar</Link></td>
                     </tr>)
                 })}
             </tbody>

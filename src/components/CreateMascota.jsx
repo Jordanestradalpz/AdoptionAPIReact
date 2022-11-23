@@ -1,8 +1,6 @@
 /* eslint-disable eqeqeq */
 import { Component } from "react";
 import axios from "axios";
-import  {Navigate} from 'react-router-dom';
-
 
 export default class CreateMascota extends Component{
     constructor(props){
@@ -15,7 +13,7 @@ export default class CreateMascota extends Component{
             peso:0.0,
             sexo:"",
             activo:1,
-            especie:0
+            idEspecie:0
         }
     }
 
