@@ -10,7 +10,7 @@ export default class CreateMascota extends Component{
             nombre:"",
             edad:0,
             color:"",
-            peso:0.0,
+            peso:0,
             sexo:"",
             activo:1,
             idEspecie:0
@@ -38,7 +38,7 @@ export default class CreateMascota extends Component{
     }
 
     hadlerEspecie = event =>{
-        this.setState({especie: event.target.value})
+        this.setState({idEspecie: event.target.value})
     }
 
     hadlerSubmit = event =>{
@@ -46,12 +46,11 @@ export default class CreateMascota extends Component{
         event.preventDefault();
     }
 
-    createMascota = async () => {
-        let respuesta = await axios.post('http://127.0.0.1:8000/api/pet',this.state);
+    createMascota = async () => {       
+        let respuesta = await axios.post('http://127.0.0.1:8000/api/pet',this.state).catch(function (e){alert("Error al Guardar")});
+        
         if(respuesta.status==200){
             window.location.href = "http://localhost:3000/mascotas";
-        }else{
-            alert("Error al Guardar")
         }
     }
 
@@ -85,7 +84,7 @@ export default class CreateMascota extends Component{
                 
                 <div className="mb-3">
                 <label className="form-label">Especie</label>
-                <input type="number" className="form-control"value={this.state.especie} onChange={this.hadlerEspecie}></input>
+                <input type="number" className="form-control"value={this.state.idEspecie} onChange={this.hadlerEspecie}></input>
                 </div>
 
                 <button type="submit" className="btn btn-primary">INSERTAR</button>
