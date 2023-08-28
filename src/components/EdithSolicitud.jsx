@@ -104,7 +104,7 @@ class EdithSolicitud extends Component{
             <input type="text" className="form-control"value={this.state.idMascota} onChange={this.hadlerMascota}></input>
             </div>
 
-            <button type="submit" className="btn btn-primary">ACTUALIZAR</button>
+            <button type="submit" className="btn btn-primary">Editar</button>
         </form>
         )
     }

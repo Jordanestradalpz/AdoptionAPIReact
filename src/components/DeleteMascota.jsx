@@ -57,7 +57,7 @@ class DeleteMascota extends Component{
     render(){
         return(
         <div>
-            <h3>Estas Seguro de Eliminar la Siguiente Mascota</h3><br/>
+            <h3>¿Estas seguro de eliminar la siguiente mascota?</h3><br/>
             <form onSubmit={this.hadlerSubmit}>
                 <div className="row">
                     <div className="col-sm-1">Nombre:</div>

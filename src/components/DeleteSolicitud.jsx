@@ -50,7 +50,7 @@ class DeleteSolicitud extends Component{
     render(){
         return(
         <div>
-            <h3>Estas Seguro de Eliminar la Siguiente Solicitud</h3><br/>
+            <h3>¿Estas eguro de eliminar la siguiente solicitud?</h3><br/>
             <form onSubmit={this.hadlerSubmit}>
                 <div className="row">
                     {console.log(this.state.idMascota)}

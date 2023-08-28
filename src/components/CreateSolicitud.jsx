@@ -87,7 +87,7 @@ export default class CreateSolicitud extends Component{
                 <input type="number" className="form-control"value={this.state.idMascota} onChange={this.hadlerIdMascota}></input>
                 </div>
 
-                <button type="submit" className="btn btn-primary">INSERTAR</button>
+                <button type="submit" className="btn btn-primary">Guardar</button>
             </form>
         )
     }

@@ -110,7 +110,7 @@ class EdithMascota extends Component{
             <input type="number" className="form-control"value={this.state.especie} onChange={this.hadlerEspecie}></input>
             </div>
 
-            <button type="submit" className="btn btn-primary">ACTUALIZAR</button>
+            <button type="submit" className="btn btn-primary">Editar</button>
         </form>
         )
     }

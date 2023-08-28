@@ -31,7 +31,7 @@ const EditEmployee = () =>{
 
     return (
         <div>
-        <h3>Edit Employee</h3>
+        <h3>Edit Empleado</h3>
         <form onSubmit={update}>
           <div className='mb-3'>
               <label className='form-label'>idUsuario</label>
@@ -43,7 +43,7 @@ const EditEmployee = () =>{
               />
           </div>
           <div className='mb-3'>
-              <label className='form-label'>activo</label>
+              <label className='form-label'>Activo</label>
               <input
                   value={activo}
                   onChange={(e)=> setActivo(e.target.value)}
@@ -51,7 +51,7 @@ const EditEmployee = () =>{
                   className='form-control'
               />
           </div>
-          <button type= 'submit' className='btn btn-primary'> Edit</button>
+          <button type= 'submit' className='btn btn-primary'>Editar</button>
         </form>
       </div>
     )

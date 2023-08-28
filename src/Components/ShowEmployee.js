@@ -43,12 +43,11 @@ const ShowEmployee = () => {
   return (
     <div>
               <h2>Employee</h2>
-        <div className='d-grid gap-2'>
-            <Link to="/employee/create" className='btn btn-success btn-lg mt-2 mb-2 text-white'>Create Employee</Link>
-        </div>
-
-        <table className='table table-hover'>
-            <thead className='bg-secondary text-white'>
+        <Link to="/employee/create" className='btn btn-success text-white'>Crear Empleado</Link>
+        <br />
+        <br />
+        <table className='table'>
+            <thead>
                 <tr>
                     <th>idEmpleado</th>
                     <th>idUsuario</th>
@@ -63,8 +62,8 @@ const ShowEmployee = () => {
                         <td> {employee.idUsuario} </td>    
                         <td> {employee.activo} </td>    
                         <td>
-                            <Link to={`/employee/edit/${employee.idEmpleado}`} className='btn btn-outline-warning'>Edit</Link>
-                            <button onClick={ ()=>showDeleteModal(employee.idEmpleado) } className='btn btn-outline-danger'>Delete</button>
+                            <Link to={`/employee/edit/${employee.idEmpleado}`} className='btn btn-outline-warning'>Editar</Link>
+                            <button onClick={ ()=>showDeleteModal(employee.idEmpleado) } className='btn btn-outline-danger'>Eliminar</button>
                         </td>
 
                     </tr>

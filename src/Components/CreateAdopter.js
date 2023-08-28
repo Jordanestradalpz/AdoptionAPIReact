@@ -17,7 +17,7 @@ const CreateAdopter = () => {
     }
   return (
     <div>
-      <h3>Create new adopter</h3>
+      <h3>Nuevo adoptante</h3>
       <form onSubmit={store}>
         <div className='mb-3'>
             <label className='form-label'>idUsuario</label>
@@ -37,7 +37,7 @@ const CreateAdopter = () => {
                 className='form-control'
             />
         </div>
-        <button type= 'submit' className='btn btn-primary'> Store</button>
+        <button type= 'submit' className='btn btn-primary'>Guardar</button>
       </form>
     </div>
   )

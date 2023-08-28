@@ -6,7 +6,7 @@ export default class Menu extends Component{
     render () {
         return <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
-            <Link className="navbar-brand" to="/">CHANCE</Link>
+            <Link className="navbar-brand" to="/">CHANCE.org</Link>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
             </button>
@@ -20,10 +20,10 @@ export default class Menu extends Component{
                 </li>
                 
                 <li class="nav-item">
-                    <a class="nav-link active" href="/adopter" tabindex="-1">Adopter</a>
+                    <a class="nav-link active" href="/adopter" tabindex="-1">Adoptante</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" href="/employee" tabindex="-1">Employee</a>
+                    <a class="nav-link active" href="/employee" tabindex="-1">Empleados</a>
                 </li>
             </ul>
             </div>

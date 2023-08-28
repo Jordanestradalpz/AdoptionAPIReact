@@ -16,7 +16,7 @@ const CreateEmployee = () => {
     }
   return (
     <div>
-      <h3>Create new Employee</h3>
+      <h3>Nuevo empleado</h3>
       <form onSubmit={store}>
         <div className='mb-3'>
             <label className='form-label'>idUsuario</label>
@@ -36,7 +36,7 @@ const CreateEmployee = () => {
                 className='form-control'
             />
         </div>
-        <button type= 'submit' className='btn btn-primary' > Store</button>
+        <button type= 'submit' className='btn btn-primary' >Guardar</button>
       </form>
     </div>
   )

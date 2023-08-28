@@ -43,13 +43,13 @@ const ShowAdopter = () => {
 
   return (
     <div>
-              <h2>Adopter</h2>
-        <div className='d-grid gap-2'>
-            <Link to="/adopter/create" className='btn btn-success btn-lg mt-2 mb-2 text-white'>Create Adopter</Link>
-        </div>
-
-        <table className='table table-hover'>
-            <thead className='bg-secondary text-white'>
+              <h2>Adoptante</h2>
+        
+            <Link to="/adopter/create" className='btn btn-success text-white'>Crear Adoptante</Link>
+        <br />
+        <br />
+        <table className='table'>
+            <thead>
                 <tr>
                     <th>idAdopter</th>
                     <th>idUsuario</th>
@@ -64,8 +64,8 @@ const ShowAdopter = () => {
                         <td> {adopter.idUsuario} </td>    
                         <td> {adopter.activo} </td>    
                         <td>
-                            <Link to={`/adopter/edit/${adopter.idAdoptante}`} className='btn btn-outline-warning'>Edit</Link>
-                            <button onClick={ ()=>showDeleteModal(adopter.idAdoptante) } className='btn btn-outline-danger'>Delete</button>
+                            <Link to={`/adopter/edit/${adopter.idAdoptante}`} className='btn btn-outline-warning'>Editar</Link>
+                            <button onClick={ ()=>showDeleteModal(adopter.idAdoptante) } className='btn btn-outline-danger'>Eliminar</button>
                         </td>
 
                     </tr>
